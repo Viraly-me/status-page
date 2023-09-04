@@ -48,7 +48,7 @@ jobs:
           SECRET_TELEGRAM_API_TOKEN: ${{secrets.SECRET_TELEGRAM_API_TOKEN}}
           SECRET_TELEGRAM_CHAT_ID: ${{secrets.SECRET_TELEGRAM_CHAT_ID}}
           SECRET_DISCORD_WEBHOOK_URL: ${{secrets.SECRET_DISCORD_WEBHOOK_URL}}
-      - run: wrangler publish --env production
+      - run: npx @cloudflare/wrangler publish --env production
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
