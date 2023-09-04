@@ -1,5 +1,5 @@
 settings:
-  title: 'Status Page'
+  title: 'Server Status'
   url: 'https://status.viraly.me' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
@@ -17,7 +17,7 @@ settings:
 monitors:
   - id: viraly.me # unique identifier
     name: Viraly.me # display name
-    description: 'Unser Hauptserver.' # default=empty
+    description: 'Unsere Website.'# default=empty
     url: 'https://workers.cloudflare.com/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
@@ -26,8 +26,32 @@ monitors:
 
   - id: ava-one-vm
     name: 'Ava One'
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
+    description: 'Unser zentrales Rechenzentrum.'
+    url: 'https://www.ava-one.viraly.me'
+    method: GET
+    expectStatus: 200
+    linkable: false # allows the title to be a link, default=true
+
+  - id: mail-cloud
+    name: 'Mail Server'
+    description: 'Unser Mailserver.'
+    url: 'https://mail.google.com/mail/'
+    method: GET
+    expectStatus: 200
+    linkable: false # allows the title to be a link, default=true
+
+  - id: meraqi-cloud
+    name: 'Meraqi™'
+    description: 'Unsere weltweite Deployment-Infrastruktur.'
+    url: 'https://cloudflare.com'
+    method: GET
+    expectStatus: 200
+    linkable: false # allows the title to be a link, default=true
+
+  - id: insightsphere-cloud
+    name: 'insightSphere™'
+    description: 'Unsere Wissensplattform.'
+    url: 'https://notion.so'
     method: GET
     expectStatus: 200
     linkable: false # allows the title to be a link, default=true
