@@ -6,17 +6,17 @@ settings:
   collectResponseTimes: true # collects avg response times from CRON locations
 
   allmonitorsOperational: 'Alle Systeme Online'
-  notAllmonitorsOperational: 'System eingeschränkt nutzbar'
+  notAllmonitorsOperational: 'Systeme eingeschränkt verfügbar'
   monitorLabelOperational: 'Online'
   monitorLabelNotOperational: 'Offline'
   monitorLabelNoData: 'Keine Daten'
   dayInHistogramNoData: 'Keine Daten'
-  dayInHistogramOperational: 'Alles gut'
-  dayInHistogramNotOperational: ' Ausfälle' # xx incident(s) recorded
+  dayInHistogramOperational: 'Alles Top'
+  dayInHistogramNotOperational: 'Ausfälle'
 
 monitors:
   - id: viraly.me # unique identifier
-    name: Viraly.me # display name
+    name: 'Viraly.me' # display name
     description: 'Unsere Website.' # default=empty
     url: 'https://workers.cloudflare.com/' # URL to fetch
     method: GET # default=GET
@@ -30,7 +30,7 @@ monitors:
     url: 'https://www.ava-one.viraly.me'
     method: GET
     expectStatus: 200
-    linkable: false # allows the title to be a link, default=true
+    linkable: false
 
   - id: mail-cloud
     name: 'Mail Server'
@@ -38,7 +38,8 @@ monitors:
     url: 'https://mail.google.com/mail/'
     method: GET
     expectStatus: 200
-    linkable: false # allows the title to be a link, default=true
+    followRedirect: true
+    linkable: false
 
   - id: meraqi-cloud
     name: 'Meraqi™'
@@ -46,12 +47,5 @@ monitors:
     url: 'https://cloudflare.com'
     method: GET
     expectStatus: 200
-    linkable: false # allows the title to be a link, default=true
-
-  - id: insightsphere-cloud
-    name: 'insightSphere™'
-    description: 'Unsere Wissensplattform.'
-    url: 'https://notion.so'
-    method: GET
-    expectStatus: 200
-    linkable: false # allows the title to be a link, default=true
+    followRedirect: true
+    linkable: false
