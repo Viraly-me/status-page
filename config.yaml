@@ -12,10 +12,10 @@ settings:
   monitorLabelNoData: 'Keine Daten'
   dayInHistogramNoData: 'Keine Daten'
   dayInHistogramOperational: 'Alles Top'
-  dayInHistogramNotOperational: 'Ausfälle'
+  dayInHistogramNotOperational: ' Ausfälle'
 
 monitors:
-  - id: viraly.me # unique identifier
+  - id: viraly-me # unique identifier
     name: 'Viraly.me' # display name
     description: 'Unsere Website.' # default=empty
     url: 'https://workers.cloudflare.com/' # URL to fetch
