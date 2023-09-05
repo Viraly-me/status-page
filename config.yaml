@@ -17,7 +17,7 @@ settings:
 monitors:
   - id: viraly.me # unique identifier
     name: Viraly.me # display name
-    description: 'Unsere Website.'# default=empty
+    description: 'Unsere Website.' # default=empty
     url: 'https://workers.cloudflare.com/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
